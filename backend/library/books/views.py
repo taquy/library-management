@@ -1,6 +1,7 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import get_object_or_404
+from django.urls import reverse
 from .models import Book
 
 
@@ -25,4 +26,12 @@ def create(request):
     book = Book(name=name, author=author,
                 publisher=publisher, date_pub=date_pub)
     book.save()
-    return HttpResponse(name + " " + author + " " + publisher + " " + date_pub)
+    books = Book.objects.all()
+    return HttpResponseRedirect('/books/')
+
+
+# Delete a book
+def delete(request, book_id):
+    book = get_object_or_404(Book, pk=book_id)
+    book.delete()
+    return HttpResponseRedirect('/books/')
