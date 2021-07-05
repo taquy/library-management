@@ -12,4 +12,5 @@ def index(request):
 
 
 def details(request, book_id):
-    return HttpResponse("test" + str(book_id))
+    book = get_object_or_404(Book, pk=book_id)
+    return render(request, 'books/details.html', {'book': book})

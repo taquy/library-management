@@ -10,7 +10,7 @@
     <h1>Books</h1>
     <ul>
         {% for book in books %}
-        <li><a href="">{{ book.name }}</a>, by {{ book.author }}, {{ book.publisher }}, {{ book.date_pub }}</li>
+        <li><a href="{% url "books:details" book.id}">{{ book.name }}</a>, by {{ book.author }}, {{ book.publisher }}, {{ book.date_pub }}</li>
         {% endfor %}
     </ul>
 </body>
