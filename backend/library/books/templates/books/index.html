@@ -13,5 +13,18 @@
         <li><a href="{% url "books:details" book.id}">{{ book.name }}</a>, by {{ book.author }}, {{ book.publisher }}, {{ book.date_pub }}</li>
         {% endfor %}
     </ul>
+    <h1>Create</h1>
+    <form action="/books/create/" method="POST">
+        {% csrf_token %}
+        <label for="name">Name:</label>
+        <input type="text" name="name"> <br/>
+        <label for="name">Author:</label>
+        <input type="text" name="author"> <br/>
+        <label for="name">Publisher:</label>
+        <input type="text" name="publisher"> <br/>
+        <label for="name">Date Time Local:</label>
+        <input type="datetime-local" name="date_pub"> <br/>
+        <input type="submit">
+    </form>
 </body>
 </html>
