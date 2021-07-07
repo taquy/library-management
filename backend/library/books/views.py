@@ -35,3 +35,15 @@ def delete(request, book_id):
     book = get_object_or_404(Book, pk=book_id)
     book.delete()
     return HttpResponseRedirect('/books/')
+
+
+# Update a book
+def update(request, book_id):
+    book = get_object_or_404(Book, pk=book_id)
+    book.name = request.POST['name']
+    book.author = request.POST['author']
+    book.publisher = request.POST['publisher']
+    book.ISBN = request.POST['ISBN']
+    book.date_pub = request.POST['date_pub']
+    book.save()
+    return HttpResponseRedirect('/books/')

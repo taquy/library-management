@@ -13,5 +13,20 @@
     <h5>ISBN: {{ book.ISBN }}</h5>
     <h5>Date publisheed: {{ book.date_pub }}</h5>
     <a href="{% url 'books:delete' book.id%}">Delete this book</a>
+    <h5>Update information</h5>
+    <form action="{% url 'books:update' book.id%}" method="POST"%>
+        {% csrf_token %}
+        <label for="name">Name:</label>
+        <input type="text" name="name" required> <br/>
+        <label for="name">Author:</label>
+        <input type="text" name="author" required> <br/>
+        <label for="name">Publisher:</label>
+        <input type="text" name="publisher" required> <br/>
+        <label for="name">ISBN:</label>
+        <input type="text" name="ISBN"> <br/>
+        <label for="name">Date Time Local:</label>
+        <input type="datetime-local" name="date_pub" required> <br/>
+        <input type="submit">
+    </form>
 </body>
 </html>

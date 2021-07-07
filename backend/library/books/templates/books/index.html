@@ -8,13 +8,17 @@
 </head>
 <body>
     <h1>Books</h1>
-    <ul>
-        {% for book in books %}
-        <li>
-            <a href="{% url 'books:details' book.id %}">{{ book.name }}</a>, by {{ book.author }}, {{ book.publisher }}, {{ book.date_pub }}
-        </li>
+    {% if books %}
+        <ul>
+            {% for book in books %}
+            <li>
+                <a href="{% url 'books:details' book.id %}">{{ book.name }}</a>, by {{ book.author }}, {{ book.publisher }}, {{ book.date_pub }}
+            </li>
         {% endfor %}
-    </ul>
+        </ul>
+    {% else %} 
+        <h1>No books in the database</h1>
+    {% endif %}
     <h1>Create</h1>
     <form action="/books/create/" method="POST"%>
         {% csrf_token %}
@@ -24,6 +28,8 @@
         <input type="text" name="author"> <br/>
         <label for="name">Publisher:</label>
         <input type="text" name="publisher"> <br/>
+        <label for="name">ISBN:</label>
+        <input type="text" name="ISBN"> <br/>
         <label for="name">Date Time Local:</label>
         <input type="datetime-local" name="date_pub"> <br/>
         <input type="submit">
