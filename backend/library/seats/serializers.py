@@ -1,6 +1,18 @@
 
+from seats.models import Seat
 from rest_framework import serializers
 
-class SeatSerializer(serializers.Serializer):
-  name = serializers.CharField(max_length=30)
-  age = serializers.CharField(max_length=30)
+class SeatSerializer(serializers.ModelSerializer):
+  
+    class Meta:
+        model = Seat
+        fields = ['id', 'name', 'age']
+        read_only_fields = ['id']
+
+    def create(self, data):
+        query = Seat(
+            name = data['name'],
+            age = data['age'],
+        )
+        query.save()
+        return query
