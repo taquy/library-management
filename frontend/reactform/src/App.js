@@ -30,7 +30,7 @@ function App() {
 
   return(
     <div className="wrapper">
-      <h1>Book Fields</h1>
+      <h1>Book Submission Form</h1>
       {submitting &&
         <div>Submtting Book information...
           You are submitting the following:
@@ -55,8 +55,8 @@ function App() {
           </label>
 
           <label>
-            <p>Year Published</p>
-            <input type="month" name="yearpublished" onChange={handleChange}/>
+            <p>ISBN</p>
+            <input name="isbn" onChange={handleChange}/>
           </label>
 
           <label>
@@ -64,7 +64,13 @@ function App() {
             <input name="publishers" onChange={handleChange}/>
           </label>
 
-         <label>
+          <label>
+            <p>Date Published</p>
+            <input type="date" name="yearpublished" onChange={handleChange}/>
+          </label>
+
+          
+         {/* <label>
            <p>Genre</p>
            <select name="Genre" onChange={handleChange}>
                <option value="">--Please choose an option--</option>
@@ -74,12 +80,12 @@ function App() {
                <option value="selfhelp">Self-help</option>
                <option value="novel">novel</option>
            </select>
-         </label>
+         </label> */}
 
-         <label>
+         {/* <label>
            <p>Count</p>
            <input type="number" name="count" min="0" onChange={handleChange} step="1"/>
-         </label>
+         </label> */}
        </fieldset>
 
         <button type="submit">Submit</button>
