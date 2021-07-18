@@ -31,7 +31,6 @@ ALLOWED_HOSTS = ['example.com', '127.0.0.1']
 # Application definition
 
 INSTALLED_APPS = [
-    'seats',
     'books.apps.BooksConfig',
     'django.contrib.admin',
     'django.contrib.auth',
