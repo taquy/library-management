@@ -64,6 +64,7 @@ function App() {
             <input name="publishers" onChange={handleChange}/>
           </label>
 
+<<<<<<< Updated upstream
          <label>
            <p>Genre</p>
            <select name="Genre" onChange={handleChange}>
@@ -80,6 +81,12 @@ function App() {
            <p>Count</p>
            <input type="number" name="count" min="0" onChange={handleChange} step="1"/>
          </label>
+=======
+          <label>
+            <p>Date Published</p>
+            <input type="date" name="yearpublished" onChange={handleChange}/>
+          </label>
+>>>>>>> Stashed changes
        </fieldset>
 
         <button type="submit">Submit</button>
