@@ -64,29 +64,10 @@ function App() {
             <input name="publishers" onChange={handleChange}/>
           </label>
 
-<<<<<<< Updated upstream
-         <label>
-           <p>Genre</p>
-           <select name="Genre" onChange={handleChange}>
-               <option value="">--Please choose an option--</option>
-               <option value="ficiont">Fiction</option>
-               <option value="nonfiction">Non-fiction</option>
-               <option value="history">History</option>
-               <option value="selfhelp">Self-help</option>
-               <option value="novel">novel</option>
-           </select>
-         </label>
-
-         <label>
-           <p>Count</p>
-           <input type="number" name="count" min="0" onChange={handleChange} step="1"/>
-         </label>
-=======
           <label>
             <p>Date Published</p>
             <input type="date" name="yearpublished" onChange={handleChange}/>
           </label>
->>>>>>> Stashed changes
        </fieldset>
 
         <button type="submit">Submit</button>
