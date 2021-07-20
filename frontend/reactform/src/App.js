@@ -67,7 +67,7 @@ function App() {
           <label>
             <p>Date Published</p>
             <input type="date" name="yearpublished" onChange={handleChange}/>
-          </label>
+
        </fieldset>
 
         <button type="submit">Submit</button>
