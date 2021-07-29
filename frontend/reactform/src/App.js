@@ -30,7 +30,7 @@ function App() {
 
   return(
     <div className="wrapper">
-      <h1>Book Fields</h1>
+      <h1>Book Submission Form</h1>
       {submitting &&
         <div>Submtting Book information...
           You are submitting the following:
@@ -55,8 +55,8 @@ function App() {
           </label>
 
           <label>
-            <p>Year Published</p>
-            <input type="month" name="yearpublished" onChange={handleChange}/>
+            <p>ISBN</p>
+            <input name="isbn" onChange={handleChange}/>
           </label>
 
           <label>
@@ -67,7 +67,7 @@ function App() {
           <label>
             <p>Date Published</p>
             <input type="date" name="yearpublished" onChange={handleChange}/>
-
+          </label>
        </fieldset>
 
         <button type="submit">Submit</button>
