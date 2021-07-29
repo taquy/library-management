@@ -68,24 +68,6 @@ function App() {
             <p>Date Published</p>
             <input type="date" name="yearpublished" onChange={handleChange}/>
           </label>
-
-          
-         {/* <label>
-           <p>Genre</p>
-           <select name="Genre" onChange={handleChange}>
-               <option value="">--Please choose an option--</option>
-               <option value="ficiont">Fiction</option>
-               <option value="nonfiction">Non-fiction</option>
-               <option value="history">History</option>
-               <option value="selfhelp">Self-help</option>
-               <option value="novel">novel</option>
-           </select>
-         </label> */}
-
-         {/* <label>
-           <p>Count</p>
-           <input type="number" name="count" min="0" onChange={handleChange} step="1"/>
-         </label> */}
        </fieldset>
 
         <button type="submit">Submit</button>
