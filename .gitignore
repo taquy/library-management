@@ -1,2 +1,6 @@
 
 backend/library/.idea/
+
+backend/library/books/__pycache__/
+
+*.pyc
