@@ -14,7 +14,6 @@ def index(request):
     return JsonResponse({'books': list(books)})
 
 
-
 # Display a specific book
 def details(request, book_id):
     book = get_object_or_404(Book, pk=book_id)
@@ -23,12 +22,15 @@ def details(request, book_id):
     return JsonResponse({'book': before_book})
 
 # Create a book
+
+
 def create(request):
-    name = request.POST['name']
-    author = request.POST['author']
-    publisher = request.POST['publisher']
-    ISBN = request.POST['ISBN']
-    date_pub = request.POST['date_pub']
+    received_json_data = json.loads(request.body)
+    name = received_json_data['name']
+    author = received_json_data['author']
+    publisher = received_json_data['publisher']
+    ISBN = received_json_data['ISBN']
+    date_pub = received_json_data['date_pub']
     book = Book(name=name, author=author,
                 publisher=publisher, date_pub=date_pub, ISBN=ISBN)
     book.save()
@@ -37,6 +39,8 @@ def create(request):
     return JsonResponse({'books': list(books)})
 
 # Delete a book
+
+
 def delete(request, book_id):
     book = get_object_or_404(Book, pk=book_id)
     book.delete()
@@ -57,4 +61,3 @@ def update(request, book_id):
     books = Book.objects.all().values()
     # return HttpResponseRedirect('/books/')
     return JsonResponse({'books': list(books)})
-
