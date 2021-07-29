@@ -1,0 +1,5 @@
+Django==3.2.5
+djangorestframework
+markdown
+django-filter
+psycopg2
